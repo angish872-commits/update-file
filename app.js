@@ -1,6 +1,6 @@
 "use strict";
 (() => {
-  const routeIds = new Set(["home", "ventures", "ideas"]);
+  const routeIds = new Set(["home", "ventures", "ideas", "project-movefuel", "project-pets", "project-websites", "project-ai", "project-supply"]);
   const views = [...document.querySelectorAll(".view")];
   const nav = [...document.querySelectorAll("[data-view]")];
   const form = document.getElementById("idea-form");
@@ -15,13 +15,18 @@
     activeRoute = routeIds.has(hash) ? hash : "home";
     views.forEach(view => { view.hidden = view.id !== activeRoute; });
     nav.forEach(link => {
-      if (link.dataset.view === activeRoute) link.setAttribute("aria-current", "page");
+      if (link.dataset.view === activeRoute || (activeRoute.startsWith("project-") && link.dataset.view === "ventures")) link.setAttribute("aria-current", "page");
       else link.removeAttribute("aria-current");
     });
     const pageTitles = {
       home: "Globle Supply Chain — Building What's Next",
       ventures: "Our Projects — Globle Supply Chain",
-      ideas: "Ideas & Requests — Globle Supply Chain"
+      ideas: "Ideas & Requests — Globle Supply Chain",
+      "project-movefuel": "MoveFuel — Globle Supply Chain",
+      "project-pets": "Globle Pets — Globle Supply Chain",
+      "project-websites": "Website Development — Globle Supply Chain",
+      "project-ai": "AI Solutions — Globle Supply Chain",
+      "project-supply": "Trade & Supply Chain — Globle Supply Chain"
     };
     document.title = pageTitles[activeRoute];
     window.scrollTo({top:0,behavior:"instant"});
