@@ -32,11 +32,20 @@
     window.scrollTo({top:0,behavior:"instant"});
   }
 
-  // Open the dedicated Globle Pets website in one click from both project grids.
-  document.querySelectorAll('a.portfolio-click[href="#project-pets"]').forEach(link => {
-    link.href = "https://pets.globlesupplychain.com/";
-    link.setAttribute("aria-label", "Open Globle Pets website directly");
+  // Send every Pets link directly to the same-domain pet pages. This avoids
+  // cross-subdomain navigation problems in restricted mobile in-app browsers.
+  document.querySelectorAll('a[href="#project-pets"], a[href="https://pets.globlesupplychain.com/"]').forEach(link => {
+    link.href = "/pets/";
+    link.removeAttribute("target");
+    if (link.classList.contains("portfolio-click")) {
+      link.setAttribute("aria-label", "Open Globle Pets directly");
+    }
   });
+  // Old bookmarks for the unnecessary intermediate details page also work.
+  if (location.hash === "#project-pets") {
+    location.replace("/pets/");
+    return;
+  }
 
   document.getElementById("year").textContent = String(new Date().getFullYear());
 
