@@ -32,6 +32,12 @@
     window.scrollTo({top:0,behavior:"instant"});
   }
 
+  // Open the dedicated Globle Pets website in one click from both project grids.
+  document.querySelectorAll('a.portfolio-click[href="#project-pets"]').forEach(link => {
+    link.href = "https://pets.globlesupplychain.com/";
+    link.setAttribute("aria-label", "Open Globle Pets website directly");
+  });
+
   document.getElementById("year").textContent = String(new Date().getFullYear());
 
   form.addEventListener("submit", event => {
