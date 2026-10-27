@@ -29,3 +29,5 @@ To launch on the root domain later:
 3. Set up Cloudflare Pages custom domains for apex and www, with correct routing after confirming current DNS is safe to replace. Do not delete unrelated DNS records.
 4. Remove the <meta name="robots" content="noindex,nofollow"> staging directive, optionally add a sitemap and robots.txt, and validate search engine crawling only when ready.
 5. Integrate a real bot or backend for requests before claiming the form sends data.
+
+Cloudflare Pages project: `globle-company-site` — deployed only to its Pages preview domain until corporate domain approval.
