@@ -1,33 +1,42 @@
-# Globle Supply Chain — Corporate Website Preview
+# Globle Supply Chain — Five-Project Website
 
-This is a **separate** multi-venture company landing website. It does not replace the already deployed [Globle Pets](https://pets.globlesupplychain.com/) pet-project website. It is for the company **Globle Supply Chain** (domain: `globlesupplychain.com`), not `globelsupply.com`.
+**Parent website:** https://globlesupplychain.com
+**Also:** https://www.globlesupplychain.com
+**Cloudflare Pages:** https://globle-company-site.pages.dev
 
-## Sections
-- Overview: general Globle Supply Chain introduction with professional photography and a feature for Globle Pets.
-- Our projects: pet project is live as a concept website; potential trade/sourcing and future ventures clearly marked as ideas, not currently offered products/services.
-- Ideas & Requests: front-end request builder with copy-to-clipboard. **No submission endpoint, email forwarding, chat bot or database is connected.** Never imply a request has actually been received.
+The parent company's website introduces **five project pages**. These are initiatives under the Globle Supply Chain umbrella, **not claims of five separately incorporated companies**. Some are projects in development, others are only ideas. No unverified sales, inventory, customers, availability, headquarters or prices are claimed.
 
-## Public claims / privacy
-- An early-stage website only; the father has not finalized the business plan.
-- No sales, pricing, testimonials, physical headquarters, trading activity or guaranteed service is asserted.
-- All non-pet business categories are only speculative and must be approved before launch.
-- No analytics, cookies or request collection.
-- Unsplash real-photo imagery is *illustrative*, not photos of company property, staff or products.
+## Five projects
 
-## Photo sources
-Real photographs from Unsplash, permitted for commercial website use under https://unsplash.com/license. They are not AI generated. Image hosting is remote via images.unsplash.com and requires an internet connection. Replace with appropriately licensed images if desired.
+1. **MoveFuel** — fitness and technology (in development). Detail route: `#project-movefuel`. External site: https://movefule.tech
+2. **Globle Pets** — pet concept website live. Detail route: `#project-pets`. External site: https://pets.globlesupplychain.com
+3. **Website Development** — planned service concept. Detail route: `#project-websites`. No standalone public website yet.
+4. **AI Solutions** — planned software concept. Detail route: `#project-ai`. No standalone public website yet.
+5. **Trade & Supply Chain** — possible future activity. Detail route: `#project-supply`. No standalone public website yet.
 
-## Development
-Static HTML/CSS/vanilla JS, accessible hash navigation, responsive design. Open index.html to preview locally. Cloudflare Pages: build command `exit 0`, output directory `.`.
+## Site structure
 
-## Deployment & IMPORTANT activation notice
-Preview on Cloudflare Pages, *not* currently set as the live root domain. Do **not** change `globlesupplychain.com` (A) or `www.globlesupplychain.com` (CNAME) without the domain owner's review and an explicit final publish decision. Existing email (MX/TXT/DKIM), Namecheap and Pets subdomain records should be preserved.
+- `#home`: general umbrella introduction and five clickable project cards.
+- `#ventures`: all five project cards.
+- `#project-*`: one dedicated page for each of the five projects.
+- `#ideas`: ideas/request form.
 
-To launch on the root domain later:
-1. Verify the company's legal branding and intended website messaging with the owner.
-2. Review the new website on its Cloudflare Pages preview URL.
-3. Set up Cloudflare Pages custom domains for apex and www, with correct routing after confirming current DNS is safe to replace. Do not delete unrelated DNS records.
-4. Remove the <meta name="robots" content="noindex,nofollow"> staging directive, optionally add a sitemap and robots.txt, and validate search engine crawling only when ready.
-5. Integrate a real bot or backend for requests before claiming the form sends data.
+**Important:** The request form currently drafts a copyable message in the visitor's browser. Nothing is transmitted, emailed, saved, or submitted. An actual company-approved backend/bot with privacy, security, spam prevention and data retention controls must be connected before promising submissions.
 
-Cloudflare Pages project: `globle-company-site` — deployed only to its Pages preview domain until corporate domain approval.
+## Deployment
+
+GitHub repository: `angish872-commits/update-file`.
+Cloudflare Pages project: `globle-company-site`, linked to the main branch.
+Static build: build command `exit 0`, output directory `.`.
+
+On October 27, 2026, Pages custom domains `globlesupplychain.com` and `www.globlesupplychain.com` were registered and the existing website DNS records updated to CNAME `globle-company-site.pages.dev`. Existing `MX`, `TXT`, `SRV`, email-related records, and `pets.globlesupplychain.com` were preserved. Domain validation/HTTPS certificate issuance can remain pending briefly after DNS changes; verify before announcing to visitors.
+
+The old apex website A record was `162.255.119.18`; the old `www` CNAME was `parkingpage.namecheap.com`. If intentionally rolling back, restore those exact two DNS records and detach the appropriate Pages custom domains after confirming with the owner. Do not edit other DNS records.
+
+## Maintenance and accuracy
+
+- Update project status labels when real businesses launch. Do not present exploratory services as available.
+- All photographic assets use real stock imagery from Unsplash CDN under the [Unsplash License](https://unsplash.com/license) and do not represent the company's actual personnel or assets.
+- `index.html` contains content, cards, links and detailed project pages.
+- `styles.css` is responsive styling; `app.js` provides navigation and client-side draft/copy; `_headers` controls content security.
+- The project is publicly indexable, so confirm that the parent company agrees to public branding and content before promotional campaigns.
